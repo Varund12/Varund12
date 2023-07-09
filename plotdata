@@ -1,0 +1,61 @@
+import matplotlib.pyplot as plt
+
+def create_line_graph(file_path):
+    x = []
+    y = []
+
+    with open(file_path, 'r') as file:
+        next(file)  # Skip the first line containing headers
+        for line in file:
+            data = line.strip().split('\t')
+            if len(data) >= 2:  # Check if both x and y values exist
+                x_value = data[0]
+                y_value = data[1]
+
+# Check if the values are not empty
+if x_value and y_value:  
+                    x.append(float(x_value))
+                    y.append(float(y_value))
+
+    plt.plot(x, y)
+    plt.xlabel('X')
+    plt.ylabel('Y')
+    plt.title('Line Graph')
+    plt.show()
+
+# Provide the path to your text file
+file_path = r'C:/Users/vdawr/OneDrive/Desktop/plotdata.txt'
+create_line_graph(file_path)
+
+Explain =
+1. `import matplotlib.pyplot as plt`: This imports the `pyplot` module from the `matplotlib` library, which provides functions for creating plots and graphs.
+
+2. `def create_line_graph(file_path)`: This defines a function called `create_line_graph` that takes a `file_path` parameter. This function will read data from a text file and create a line graph based on the data.
+
+3. `x = []` and `y = []`: These lines create two empty lists to store the x-values and y-values respectively.
+
+4. `with open(file_path, 'r') as file:`: This opens the specified file in read mode using a context manager, ensuring that the file is closed properly after use.
+
+5. `next(file)`: This skips the first line of the file, assuming it contains headers or labels.
+
+6. `for line in file:`: This iterates over each line in the file.
+
+7. `data = line.strip().split('\t')`: This splits the line by the tab character (`'\t'`) and assigns the resulting values to the `data` list.
+
+8. `if len(data) >= 2:`: This checks if the line contains at least two values (assumed to be x and y values).
+
+9. `x_value = data[0]` and `y_value = data[1]`: These lines assign the first and second values of the `data` list to `x_value` and `y_value` variables respectively.
+
+10. `if x_value and y_value:`: This checks if both `x_value` and `y_value` are not empty.
+
+11. `x.append(float(x_value))` and `y.append(float(y_value))`: These lines convert `x_value` and `y_value` to floats and append them to the `x` and `y` lists respectively.
+
+12. `plt.plot(x, y)`: This plots the line graph using the `plot()` function from `pyplot`, with the `x` and `y` lists as arguments.
+
+13. `plt.xlabel('X')`, `plt.ylabel('Y')`, and `plt.title('Line Graph')`: These lines set the labels for the x-axis, y-axis, and the title of the graph, respectively.
+
+14. `plt.show()`: This displays the line graph.
+
+15. `file_path = r'C:/Users/vdawr/OneDrive/Desktop/plotdata.txt'`: This assigns the file path of the text file containing the data to the `file_path` variable.
+
+16. `create_line_graph(file_path)`: This calls the `create_line_graph()` function, passing the `file_path` as an argument, to generate the line graph.
