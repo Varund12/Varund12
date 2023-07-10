@@ -1,31 +1,41 @@
 import matplotlib.pyplot as plt
 
+#To create a line graph
 def create_line_graph(file_path):
     x = []
     y = []
 
+    #Opening the specicified file
     with open(file_path, 'r') as file:
-        next(file)  # Skip the first line containing headers
         for line in file:
+
+          #Spliting the text file line in two x and y values list and creating a tab
             data = line.strip().split('\t')
-            if len(data) >= 2:  # Check if both x and y values exist
+
+            # Check if both x and y values exist
+            if len(data) >= 2:  
                 x_value = data[0]
                 y_value = data[1]
-                if x_value and y_value:  # Check if the values are not empty
+
+                # Check if the values are not empty
+                if x_value and y_value:  
                     x.append(float(x_value))
                     y.append(float(y_value))
 
+#Plotting the graph
     plt.plot(x, y, color='green', linestyle='dashed', linewidth = 3,
          marker='o', markerfacecolor='blue', markersize=12)
-    
+   
+    #Labels
     plt.xlabel('X')
     plt.ylabel('Y')
     plt.title('Line Graph')
     plt.show()
 
 # Provide the path to your text file
-file_path = r'C:/Users/vdawr/OneDrive/Desktop/plotdata.txt'
+file_path = r'C:/Users/conra/Desktop/plotdata.txt'
 create_line_graph(file_path)
+
 
 
 Explain =
