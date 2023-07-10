@@ -70,3 +70,6 @@ Explain =
 15. `file_path = r'C:/Users/vdawr/OneDrive/Desktop/plotdata.txt'`: This assigns the file path of the text file containing the data to the `file_path` variable.
 
 16. `create_line_graph(file_path)`: This calls the `create_line_graph()` function, passing the `file_path` as an argument, to generate the line graph.
+
+
+https://pythonspot.com/read-file/
