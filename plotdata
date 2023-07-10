@@ -11,13 +11,13 @@ def create_line_graph(file_path):
             if len(data) >= 2:  # Check if both x and y values exist
                 x_value = data[0]
                 y_value = data[1]
-
-# Check if the values are not empty
-if x_value and y_value:  
+                if x_value and y_value:  # Check if the values are not empty
                     x.append(float(x_value))
                     y.append(float(y_value))
 
-    plt.plot(x, y)
+    plt.plot(x, y, color='green', linestyle='dashed', linewidth = 3,
+         marker='o', markerfacecolor='blue', markersize=12)
+    
     plt.xlabel('X')
     plt.ylabel('Y')
     plt.title('Line Graph')
@@ -26,6 +26,7 @@ if x_value and y_value:
 # Provide the path to your text file
 file_path = r'C:/Users/vdawr/OneDrive/Desktop/plotdata.txt'
 create_line_graph(file_path)
+
 
 Explain =
 1. `import matplotlib.pyplot as plt`: This imports the `pyplot` module from the `matplotlib` library, which provides functions for creating plots and graphs.
