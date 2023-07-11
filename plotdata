@@ -29,8 +29,3 @@ for line in open('C:/Users/conra/Desktop/plotdata.txt', 'r'):
 
     #Display the graph
     plt.show()
-
-
-
-
-
