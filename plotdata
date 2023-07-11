@@ -1,9 +1,20 @@
+#Name - Varun
+#Program - To write a code to plot a graph using a text file by reading it.
+#Date - 07/11/2023
+
+#Importing the library
 import matplotlib.pyplot as plt
-  
+
+#Line graphing x and y
 x = []
 y = []
+
+#Opening lines in the text file
 for line in open('C:/Users/conra/Desktop/plotdata.txt', 'r'):
+    #Splitting the lines in two for x and y.
     lines = [i for i in line.split()]
+   
+   # Appendinfg means adding constantly till the data and using float as txt files has number in decimals.
     x.append(float(lines[0]))
     y.append(float(lines[1]))
 
@@ -15,6 +26,8 @@ for line in open('C:/Users/conra/Desktop/plotdata.txt', 'r'):
     plt.xlabel('X')
     plt.ylabel('Y')
     plt.title('Line Graph')
+
+    #Display the graph
     plt.show()
 
 
