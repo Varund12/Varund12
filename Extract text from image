@@ -9,7 +9,7 @@ from PIL import Image
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 # Loading the image from the location in the computer
-image_path = 'C:/Users/conra/Pictures/Screenshots/Screenshot (9).png'
+image_path = 'C:/Users/conra/OneDrive/Intern Project_2023_7/Varun\VDTEXT.png'
 
 #Opening the image from the path
 image = Image.open(image_path)
@@ -27,6 +27,42 @@ print(text)
 #total no. of characters.
 print("Total Number of characters: ")
 print(len(text))
+
+#===============================================#
+
+
+# Importing the library.
+import matplotlib.pyplot as plt
+
+# Line graphing x and y.
+x = []
+y = []
+
+# Opening lines in the text file.
+for line in open(r'C:/Users/conra/Desktop/Monthly$$.txt', 'r'):
+    # Splitting the lines into x and y.
+    lines = line.split()
+    
+    # Checking if the line has enough elements.
+    if len(lines) >= 2:
+        # Appending x and y values.
+        x.append(lines[0])
+        y.append(float(lines[1]))
+    else:
+        print(f"Ignoring line: {line.strip()}")  # Print the line for reference.
+
+# Labels.
+plt.plot(x, y, color='green', linestyle='dashed', linewidth=3,
+         marker='o', markerfacecolor='blue', markersize=12)
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Line Graph')
+
+# Display the graph.
+plt.show()
+
+if total_exp >Salary
+print("Your budget is under control")
 
 1. `import pytesseract`: This line imports the `pytesseract` library, which provides an interface to work with the Tesseract OCR engine.
 
