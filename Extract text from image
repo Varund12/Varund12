@@ -1,0 +1,35 @@
+import pytesseract
+from PIL import Image
+
+# Path to the Tesseract executable (change it if necessary)
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+# Load the image
+image_path = 'C:/Users/vdawr/OneDrive/Desktop\Computersciecnepara.png'
+image = Image.open(image_path)
+
+# Perform OCR and extract the text
+text = pytesseract.image_to_string(image)
+
+# Print the extracted text
+print(text)
+
+1. `import pytesseract`: This line imports the `pytesseract` library, which provides an interface to work with the Tesseract OCR engine.
+
+2. `from PIL import Image`: This line imports the `Image` class from the PIL (Python Imaging Library) module. The `Image` class is used to open and manipulate images.
+
+3. `pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'`: This line sets the path to the Tesseract OCR executable. You may need to modify this path to match the location where Tesseract is installed on your system.
+
+4. `image_path = 'C:/Users/vdawr/OneDrive/Desktop\Computersciecnepara.png'`: This line specifies the path to the image file that you want to perform OCR on. Make sure to provide the correct path to your image file.
+
+5. `image = Image.open(image_path)`: This line uses the `Image` class to open the image file specified by `image_path` and assigns it to the variable `image`.
+
+6. `text = pytesseract.image_to_string(image)`: This line calls the `image_to_string` function from the `pytesseract` library to perform OCR on the `image` and extract the text from it. The extracted text is assigned to the variable `text`.
+
+7. `print(text)`: This line simply prints the extracted text to the console.
+
+Required library to install: 
+pip install pytesseract
+pip install Pillow
+
+Tesseract installer = https://github.com/UB-Mannheim/tesseract/wiki
