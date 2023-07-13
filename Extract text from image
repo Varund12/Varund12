@@ -1,18 +1,32 @@
+# pytesseract library, is a Optical Character Recognition tool 
+# To read and recognize the text in images,.
 import pytesseract
+
+#Importing the `Image` class from the PIL (Python Imaging Library).
 from PIL import Image
 
-# Path to the Tesseract executable (change it if necessary)
+# Setting the path to the Tesseract where it is installed in the computer.
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
-# Load the image
-image_path = 'C:/Users/vdawr/OneDrive/Desktop\Computersciecnepara.png'
+# Loading the image from the location in the computer
+image_path = 'C:/Users/conra/Pictures/Screenshots/Screenshot (9).png'
+
+#Opening the image from the path
 image = Image.open(image_path)
 
-# Perform OCR and extract the text
+# The extracted text is assigned to the variable `text`
+#Using string because of the text
 text = pytesseract.image_to_string(image)
 
-# Print the extracted text
+#Title
+print("                          Extracting the text from the image \n")
+
+# Printting the extracted text
 print(text)
+
+#total no. of characters.
+print("Total Number of characters: ")
+print(len(text))
 
 1. `import pytesseract`: This line imports the `pytesseract` library, which provides an interface to work with the Tesseract OCR engine.
 
